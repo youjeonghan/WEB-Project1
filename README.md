@@ -1,2 +1,1 @@
-# WEB-Project1
-메롱
+# WEB-Project1 가나다라마바사
