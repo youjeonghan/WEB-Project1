@@ -2,7 +2,7 @@ body{
 	margin : 0;
 }
 a{
-	font-size: 65px;
+	font-size: 100%;
 	text-decoration:none;
 	color : black;
 }
@@ -16,13 +16,12 @@ hr{
 	border:none;
 	border: 1px solid black;
 }
-center{
-	position: 	absolute;
-	top: 50%;
+.__center{
+	position: absolute;
+	top:50%;
 	left: 50%;
-	padding:150px;
-	background-color:yellow;
-	border-radius: 	30px;
+	background: transparent;
+	transform: translate(-50%,-50%);
 }
 #main{
 	background-color: #FFFF99;
@@ -54,7 +53,7 @@ center{
 	 margin-right: 50px;
 }
 li{
-	 margin-top: 50px;
+	 margin-top: 100%;
 }
 .nav__logo{
 	font	
