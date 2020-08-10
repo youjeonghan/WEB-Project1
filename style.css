@@ -1,7 +1,9 @@
-body{
+*{
 	margin : 0;
+	padding: 0;
 }
 a{
+	padding:20%;
 	font-size: 100%;
 	text-decoration:none;
 	color : black;
@@ -11,11 +13,7 @@ a:hover{
 	text-decoration:none;
 	background-color: black;
 }
-hr{
-	width: 120%;
-	border:none;
-	border: 1px solid black;
-}
+
 .__center{
 	position: absolute;
 	top:50%;
@@ -33,30 +31,36 @@ hr{
 	/*정렬관련*/
 	display: flex;
 	flex-direction:column;
-	align-items: center;
-	justify-content: center;
+	align-items: center; 
+	justify-content: space-around;
 
 	
-	width:300px;
+	width:250px;
 	height: 100%;
 	background:#222;
 	position:fixed;
 	top: 0;
-	left: -300px;
+	left: -250px;
 	z-index:1; /*위로올라오게*/
 	transition:all.35s;
 
 	background-color: white;
 }
 .nav__menu{
-	 list-style:none;
-	 margin-right: 50px;
+	list-style:none;
+	display: flex;
+	flex-direction:column;
+	align-items: center;
+	justify-content: center;
 }
-li{
-	 margin-top: 100%;
+.nav__menu li{
+	 margin-top: 70%;
 }
 .nav__logo{
-	font	
+	margin-top: 130px;
+}
+.nav__links{
+	margin-left: 70%;
 }
 input[id="menuicon"]{
 	display:none;
