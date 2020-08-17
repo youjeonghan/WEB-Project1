@@ -2,17 +2,6 @@
 	margin : 0;
 	padding: 0;
 }
-a{
-	padding:20%;
-	font-size: 100%;
-	text-decoration:none;
-	color : black;
-}
-a:hover{
-	color: white;
-	text-decoration:none;
-	background-color: black;
-}
 
 .__center{
 	position: absolute;
@@ -53,6 +42,18 @@ a:hover{
 	align-items: center;
 	justify-content: center;
 }
+.nav__menu a{
+	padding:20%;
+	font-size: 100%;
+	text-decoration:none;
+	color : black;
+}
+.nav__menu a:hover{
+	color: white;
+	text-decoration:none;
+	background-color: black;
+}
+
 .nav__menu li{
 	 margin-top: 70%;
 }

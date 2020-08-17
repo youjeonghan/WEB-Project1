@@ -5,8 +5,10 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width = device-width , initial-scale=1.0">
 	<script src="https://kit.fontawesome.com/8625eebbbc.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="stylesheet" type="text/css" href="Rooms.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css?ver=1">
+	<link rel="stylesheet" type="text/css" href="Rooms.css?ver=2">
+
 </head>
 <body id="main">
 	<input type="checkbox" id="menuicon">
@@ -20,21 +22,36 @@
 			<h2>Hello Your Rooms</h2>
 
 		</div>	
-	<ul class="nav__menu">
-		<li><a href="index.html">Home</a></li>
-		<li><a href="Rooms.html">Rooms</a></li>
-		<li><a href="">two</a></li>
-		<li><a href="">three</a></li>
-		<li><a href="">four</a></li>
-	</ul>
-		<ul class="nav__links">
-			<i class="fas fa-bug"></i>
-			<i class="fas fa-apple-alt"></i>
+		<ul class="nav__menu">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="Rooms.html">Rooms</a></li>
+			<li><a href="">two</a></li>
+			<li><a href="">three</a></li>
+			<li><a href="">four</a></li>
 		</ul>
+			<ul class="nav__links">
+				<i class="fas fa-bug"></i>
+				<i class="fas fa-apple-alt"></i>
+		</ul>s
 	</nav>
-
-	<section class="__Rooms">
+	
+	<section class="Board">
+		<div class="Board__title">
+			<h1>모임이름 - 게시판</h1>
 		
+		 <!-- 게시판글쓰기 -->
+		<div class="Board__input">
+			<form action="url" method="post">
+				<input type="text" placeholder="내용을 입력하세요. " name="article" class="article"/>
+			</form>
+
+		</div>
+ 		<!-- 게시판글목록 -->
+		<div class="board__lists">
+
+		</div>
+
 	</section>
+	<script src="http://localhost/Rooms.js?ver=1"></script>
 </body>
 </html>
