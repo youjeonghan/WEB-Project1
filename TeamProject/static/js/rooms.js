@@ -1,10 +1,10 @@
-var json_url = 'http://localhost/ex.json?ver=1';
+var json_url = 'http://127.0.0.1:5000/board';
 fetch(json_url)
   .then(function(response) {
     return response.json();
   })
   .then(function(json) {
-  	// console.log(JSON.stringify(json));
+  	console.log(JSON.stringify(json));
   	var text ='';
     for (var i = 0; i <=json.length-1; i++) {
 	    var boards_html = 	
@@ -17,6 +17,6 @@ fetch(json_url)
 					'</ul>'+'</section>';
 		text += boards_html;
     }
-    console.log(text);
+
     document.querySelector('.board__lists').innerHTML = text;
   });

@@ -6,8 +6,8 @@
 	<meta name="viewport" content="width = device-width , initial-scale=1.0">
 	<script src="https://kit.fontawesome.com/8625eebbbc.js" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css?ver=1">
-	<link rel="stylesheet" type="text/css" href="Rooms.css?ver=2">
+	<link rel='stylesheet' href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel='stylesheet' href="{{ url_for('static', filename='css/Rooms.css') }}">
 
 </head>
 <body id="main">
@@ -52,6 +52,6 @@
 		</div>
 
 	</section>
-	<script src="http://localhost/Rooms.js?ver=3"></script>
+	<script src="{{ url_for('static', filename='js/rooms.js') }}"></script>
 </body>
 </html>
