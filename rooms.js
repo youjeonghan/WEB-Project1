@@ -4,7 +4,7 @@ fetch(json_url)
     return response.json();
   })
   .then(function(json) {
-  	console.log(JSON.stringify(json));
+  	// console.log(JSON.stringify(json));
   	var text ='';
     for (var i = 0; i <=json.length-1; i++) {
 	    var boards_html = 	
@@ -17,6 +17,6 @@ fetch(json_url)
 					'</ul>'+'</section>';
 		text += boards_html;
     }
-
+    console.log(text);
     document.querySelector('.board__lists').innerHTML = text;
   });
