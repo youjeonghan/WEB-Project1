@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Web Project - commuim</title>
+	<title>Web Project - YourRoom</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width = device-width , initial-scale=1.0">
 	<script src="https://kit.fontawesome.com/8625eebbbc.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel='stylesheet' href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 <body id="main">
 	<input type="checkbox" id="menuicon">
@@ -16,20 +17,15 @@
 	</label>	
 	<nav class="nav">
 		<div class="nav__logo">
-			<a href="">Hello</a>
-			<hr>
+			<h2>Hello Your Rooms</h2>
+
 		</div>	
 	<ul class="nav__menu">
-		<li><a href="">Home</a></li>
-		<hr>
-		<li><a href="">one</a></li>
-		<hr>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="Rooms.html">Rooms</a></li>
 		<li><a href="">two</a></li>
-		<hr>
 		<li><a href="">three</a></li>
-		<hr>
 		<li><a href="">four</a></li>
-		<hr>
 	</ul>
 		<ul class="nav__links">
 			<i class="fas fa-bug"></i>
@@ -37,9 +33,10 @@
 		</ul>
 	</nav>
 
+	<!-- js로 옮기기 -->
 	<section class="__center">
 		<h1>LOGO TEXT</h1>
-		<form method="post" id="authForm" name="authForm" action="Put URL here">
+		<form method="post" id="authForm" name="authForm" action="http://localhost/Rooms.html">
 			<!-- method :전송방식->post , action : 로그인 -->
 			<div class="input__area">
 				<input type="text" id="loginId" name="loginId" placeholder="ID">

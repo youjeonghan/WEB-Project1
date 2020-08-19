@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Web Project - YourRoom</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width = device-width , initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/8625eebbbc.js" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel='stylesheet' href="{{ url_for('static', filename='css/style.css') }}">
+	<link rel='stylesheet' href="{{ url_for('static', filename='css/Rooms.css') }}">
+
+</head>
+<body id="main">
+	<input type="checkbox" id="menuicon">
+	<label for="menuicon">
+		<span></span>
+		<span></span>
+		<span></span>
+	</label>	
+	<nav class="nav">
+		<div class="nav__logo">
+			<h2>Hello Your Rooms</h2>
+
+		</div>	
+		<ul class="nav__menu">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="Rooms.html">Rooms</a></li>
+			<li><a href="">two</a></li>
+			<li><a href="">three</a></li>
+			<li><a href="">four</a></li>
+		</ul>
+			<ul class="nav__links">
+				<i class="fas fa-bug"></i>
+				<i class="fas fa-apple-alt"></i>
+		</ul>s
+	</nav>
+	
+	<section class="Board">
+		<div class="Board__title">
+			<h1>모임이름 - 게시판</h1>
+		
+		 <!-- 게시판글쓰기 -->
+		<div class="Board__input">
+			<form action="url" method="post">
+				<input type="text" placeholder="내용을 입력하세요. " name="article" class="article"/>
+			</form>
+
+		</div>
+ 		<!-- 게시판글목록 -->
+		<div class="board__lists">
+
+		</div>
+
+	</section>
+	<script src="{{ url_for('static', filename='js/rooms.js') }}"></script>
+</body>
+</html>
