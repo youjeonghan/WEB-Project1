@@ -1,9 +1,14 @@
 const board_url = 'http://127.0.0.1:5000/board';
 
 //init function
-load_board();
+init();
 
+function init(){
+  load_board();
+  hide_input();
+}
 
+///////////////////조회 ///////////////
 //통신을 통하여 해당 url 정보를 json화 해서 반환
 function fetch_tojson(){
   return fetch(board_url).then(function(response) {
@@ -20,7 +25,7 @@ function fetch_tojson(){
 //게시판 글 태그 만들기 
 function paint_board(board){
   const board_html =   
-  '<section class="board__lists__item">'+
+  '<section class="board__lists__item" onclick = "board_big()">'+
   '<h3>'+board.subject+'</h3>'+
   '<p>'+board.content+'</p>' +
   '<ul>'+
@@ -47,7 +52,7 @@ async function load_board(){
 
   }
 
-//url 정보 전송
+///////////////////입력 ///////////////
 
 function fetch_insert(data){
   return fetch(board_url,{
@@ -79,9 +84,29 @@ function input_board(){
   input_content.value = "";
   return object;
 }
+
+
+//입력창 만들기//
+function paint_input(){
+  const html = '<div class="input__on"><input type="text" placeholder="제목을 입력하세요" class="input__subject">' +
+      '<textarea name="article" class="input__article" placeholder="내용을 입력하세요"></textarea>' +
+      '<input type="button" class="input__button" onclick="input__click();" value="글쓰기" /> </div>'
+  document.querySelector('.Board__input').innerHTML = html;
+}
+//입력창 숨기기//
+function hide_input(){
+  const html ='<div class = "input__off"><textarea placeholder="게시글을 작성해보세요" onclick="paint_input()"></textarea></div>';
+  document.querySelector('.Board__input').innerHTML = html;
+}
+
 //버튼 이벤트 헨들러
 async function input__click(){
   const data = input_board();
   await fetch_insert(data);
-  load_board();
+  init();
+}
+
+//보드 확대
+function board_big(){
+  console.log("AsdfdF");
 }

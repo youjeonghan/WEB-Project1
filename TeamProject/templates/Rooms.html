@@ -40,16 +40,9 @@
 			<h1>모임이름 - 게시판</h1>
 		
 		 <!-- 게시판글쓰기 -->
-		<div class="Board__input">
-			<input type="text" placeholder="제목을 입력하세요" class="input__subject">
-			<textarea name="article" class="input__article" placeholder="내용을 입력하세요"></textarea>
-			<input type="button" class="input__button" onclick="input__click();" value="글쓰기" />
-
-		</div>
+		<div class="Board__input"></div>
  		<!-- 게시판글목록 -->
-		<div class="board__lists">
-
-		</div>
+		<div class="board__lists"></div>
 
 	</section>
 	<script src="{{ url_for('static', filename='js/rooms.js') }}"></script>
