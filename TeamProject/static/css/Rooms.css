@@ -9,8 +9,7 @@
 	width: 70%;
 	height: 80%;
 	left:100px;
-	top: 90px;
-
+	top: 90px;	
 }
 .Board__title{
 	margin-top: 10px;
@@ -58,15 +57,15 @@
 	margin-top: 20px;
 	margin-bottom :10px;
 	width:100%;
-	height: 100px;
-	opacity: 0.5;
-	background:transparent;
+	height: 200px;
+
 }
 .input__subject{
 	border: 2px solid yellow;
 	margin-top: 5px;
 	width: 90%;
 	height: 25%;
+	opacity: 0.5;
 }
 .input__article{
 	border: 2px solid yellow;
@@ -74,4 +73,8 @@
 	resize: none;
 	width: 90%;
 	height: 65%;
+	opacity: 0.5;
+}
+.input__button{
+	margin-left: 80%;
 }

@@ -11,8 +11,8 @@ app = Flask(__name__)
 def test():
 	for i in range(1,3):     
 		board = Board()
-		board.subject = "이신필 병신 %d" % i
-		board.content = "프론트 씨이발련아~ %d" % i
+		board.subject = "이신필 천재  %d" % i
+		board.content = "프론트 너무좋아 %d" % i
 		board.create_date = datetime.now()
 
 		db.session.add(board)

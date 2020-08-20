@@ -2,11 +2,11 @@ const board_url = 'http://127.0.0.1:5000/board';
 
 //init function
 load_board();
-// input_board();
+
 
 //통신을 통하여 해당 url 정보를 json화 해서 반환
-function fetch_tojson(url){
-  return fetch(url).then(function(response) {
+function fetch_tojson(){
+  return fetch(board_url).then(function(response) {
     if(response.ok){
       return response.json();
     }
@@ -34,7 +34,7 @@ function paint_board(board){
 async function load_board(){
     //board_url변수를 통해 json형식의 board정보를 boards변수에 저장
     try{
-      const boards = await fetch_tojson(board_url);
+      const boards = await fetch_tojson();
       //게시판 tag 생성
       let text ='';
       for (var i = boards.length-1; i >=0; i--) {
@@ -47,14 +47,41 @@ async function load_board(){
 
   }
 
+//url 정보 전송
 
+function fetch_insert(data){
+  return fetch(board_url,{
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+    },
+    body: JSON.stringify(data)
+  }).then(function(response) {
+    if(response.ok){
+      return response.json();
+    }
+    else{
+      alert("HTTP-ERROR: " + response.status);
+    }
+  });
+
+}
 function input_board(){
-// 입력창 박스를 만들고 , 엔터치면 이벤트헨들러로 데이터 전송, 페인트 함수 호출 
-   const input_subject = document.querySelector('.input__subject').value;
-   const input_content = document.querySelector('.input__article').value;
-   const object = {
-      subject : input_subject,
-      content : input_content
-   };
-  console.log(object);
+// 입력후 페인트함수 호출 , 내용 추출객체 반환 
+  const input_subject = document.querySelector('.input__subject');
+  const input_content = document.querySelector('.input__article');
+  
+  let object = {
+    subject : input_subject.value,
+    content : input_content.value
+  };
+  input_subject.value = "";
+  input_content.value = "";
+  return object;
+}
+//버튼 이벤트 헨들러
+async function input__click(){
+  const data = input_board();
+  await fetch_insert(data);
+  load_board();
 }
