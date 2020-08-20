@@ -21,8 +21,8 @@
 
 		</div>	
 	<ul class="nav__menu">
-		<li><a href="index.html">Home</a></li>
-		<li><a href="Rooms.html">Rooms</a></li>
+		<li><a href="/index.html">Home</a></li>
+		<li><a href="/Rooms.html">Rooms</a></li>
 		<li><a href="">two</a></li>
 		<li><a href="">three</a></li>
 		<li><a href="">four</a></li>
@@ -36,7 +36,7 @@
 	<!-- js로 옮기기 -->
 	<section class="__center">
 		<h1>LOGO TEXT</h1>
-		<form method="post" id="authForm" name="authForm" action="http://localhost/Rooms.html">
+		<form method="post" id="authForm" name="authForm" action="{ url_for('templates', filename='Rooms.html') }}"">
 			<!-- method :전송방식->post , action : 로그인 -->
 			<div class="input__area">
 				<input type="text" id="loginId" name="loginId" placeholder="ID">
