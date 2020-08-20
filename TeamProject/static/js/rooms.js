@@ -47,7 +47,12 @@ async function load_board(){
   }
 
 
-function input_board(){
-// 입력창 박스를 만들고 , 엔터치면 이벤트헨들러로 데이터 전송, 페인트 함수 호출 
+// function input_board(){
+// // 입력창 박스를 만들고 , 엔터치면 이벤트헨들러로 데이터 전송, 페인트 함수 호출 
+//    const subject = document.querySelector('.input__subject').value;
+//    const object = {
+//       object.subject = subject,
+//       object.content = content;
 
-}
+//    }
+// }
