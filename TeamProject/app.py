@@ -58,9 +58,21 @@ def board():
 	boardlist = Board.query.all()
 	return jsonify([board.serialize for board in boardlist])      # json으로 게시판 목록 리턴
 
-@app.route('/board/<i>', methods=['GET','POST'])
-def personal_board(i):
-	pass
+@app.route('/board/<id>', methods=['GET','PUT','DELETE'])
+def board_detail(id):
+	if request.method == 'GET':									# 어떤id의 글
+		board = Board.query.filter(Board.id == id).first()
+		return jsonify(board.serialize)
+
+	elif request.method == 'DELETE':							# 삭제
+		Board.query.delete(Board.id == id)
+		return jsonify(), 204		# 204는 no contents를 의미한다(앞으로 이용할수 없다는 뜻을 명시적으로알림, 성공을 알리는거긴함)
+
+	data = request.get_json()
+	Board.query.filter(Board.id == id).update(data)
+	board = Board.query.filter(Board.id == id).first()
+	return jsonify(board.serialize)								# 수정
+
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 dbfile = os.path.join(basedir, 'db.sqlite')
