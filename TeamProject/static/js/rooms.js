@@ -1,7 +1,8 @@
 const board_url = 'http://127.0.0.1:5000/board';
 const user_url = '';
 
-
+paint_board();
+console.log(asdf);
 // fetch(json_url)
 //   .then(function(response) {
 //     return response.json();
