@@ -87,7 +87,9 @@ function input_board(){
 function paint_input(){
   const html = '<div class="input__on"><input type="text" placeholder="제목을 입력하세요" class="input__subject">' +
       '<textarea name="article" class="input__article" placeholder="내용을 입력하세요"></textarea>' +
-      '<input type="button" class="input__button" onclick="handle_input();" value="글쓰기" /> </div>'
+      '<div class = "input__buttons">'+
+      '<input type="button"  onclick="handle_input();" value="글쓰기" />'+
+      '<input type="button"  onclick="hide_input();" value="X" /></div></div>'
   const ele = document.querySelector('.Board__input');
   ele.style.height=300 +'px';
   ele.innerHTML = html;

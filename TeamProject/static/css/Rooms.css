@@ -38,6 +38,7 @@
 	background-color: white;
 	margin-bottom: 10px;
 	border: 2px solid yellow;
+	cursor: pointer;
 }
 .board__lists__item h3{
 	margin-left: 10px;
@@ -76,11 +77,14 @@
 	margin-top: 10px;
 	width:100%;
 	height: 40px;
+
 }
 .input__off textarea{
 	border: 2px solid yellow;
 	width: 100%;
 	opacity: 0.5;
+	cursor: pointer;
+
 }
 .input__on{
 	display: flex;
@@ -116,6 +120,11 @@
 	opacity: 0.5;
 
 }
-.input__button{
-	margin-left: 80%;
+.input__buttons{
+	width: 100%;
+	display: inline-flex;
+	justify-content: flex-end;
+}
+.input__buttons input{
+	margin-left: 10px;
 }
