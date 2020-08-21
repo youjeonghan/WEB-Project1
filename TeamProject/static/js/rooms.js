@@ -2,7 +2,9 @@ const board_url = 'http://127.0.0.1:5000/board';
 
   hide_input();
   load_board();
-
+  const test = 'string';
+  console.log(test);
+  console.log(test[0]);
 
 ///////////////////조회 ///////////////
 //통신을 통하여 해당 url 정보를 json화 해서 반환 method get
@@ -22,7 +24,7 @@ function fetch_tojson(url){
 function paint_board(board){
   const board_html =   
   '<section class="board__lists__item" id = "board__'+ board.id + '" onclick = "handle_biginput()">'+
-  '<h3>'+board.subject+'</h3>'+
+  '<h3>'+board.subject+'</h3>'+ '<hr>'+
   '<p>'+board.content+'</p>' +
   '<ul>'+
   '<li>'+board.create_date+'</li>'+
@@ -120,6 +122,7 @@ function handle_biginput(){
   // console.log(event_id[1]);
   load_bigboard(event_id[1]);
 }
+
 async function load_bigboard(id){
     try{
       console.log("눌럿음");
