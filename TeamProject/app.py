@@ -66,9 +66,9 @@ def board_detail(id):
 
 	elif request.method == 'DELETE':							# 삭제
 		board = Board.query.filter(Board.id == id).first()
-        db.session.delete(board)
-        db.session.commit()
-        return jsonify(), 204	# 204는 no contents를 의미한다(앞으로 이용할수 없다는 뜻을 명시적으로알림, 성공을 알리는거긴함)
+		db.session.delete(board)
+		db.session.commit()
+		return jsonify(), 204	# 204는 no contents를 의미한다(앞으로 이용할수 없다는 뜻을 명시적으로알림, 성공을 알리는거긴함)
 
 	data = request.get_json()
 	Board.query.filter(Board.id == id).update(data)

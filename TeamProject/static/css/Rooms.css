@@ -128,21 +128,40 @@
 	width:90%;
 	height: 500px;
 }
-.input__bigsubject{
+.board__bigsubject{
 	width: 100%;
 	height: 50px;
 	margin-bottom: 10px;
 	background-color: white;
 }
-.input__bigarticle{
+.board__bigarticle{
 	width: 100%;
 	height: 500px;
 	margin-bottom: 10px;
 	background-color: white;	
 }
-.input__bigothers{
+.board__bigothers{
+	display: inline-flex;
+	justify-content: flex-end;
 	width: 100%;
 	height: 50px;
 	margin-bottom: 10px;
 	background-color: white;	
+	list-style :none;
+
+}
+.input__bigsubject{
+	width: 90%;
+	height: 50px;
+	margin-bottom: 
+}
+.input__bigarticle{
+	width: 90%;
+	height: 700px;
+	margin-bottom: 
+}
+.input__bigothers{
+	width: 90%;
+	height: 50px;
+	margin-bottom: 
 }
