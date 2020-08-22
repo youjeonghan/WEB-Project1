@@ -1,10 +1,12 @@
 const board_url = 'http://127.0.0.1:5000/board';
 
-  hide_input();
-  load_board();
-  const test = 'string';
-  console.log(test);
-  console.log(test[0]);
+function init(){
+    load_board();
+    hide_input();
+
+}
+
+init();
 
 ///////////////////조회 ///////////////
 //통신을 통하여 해당 url 정보를 json화 해서 반환 method get
@@ -108,28 +110,23 @@ async function handle_input(){
   try{
       const data = input_board();
       await fetch_insert(data);
-      load_board();
-      hide_input();
+      init();
   } catch(error){
       console.log(error);
     }
 
 }
 
-////////보드 확대
-
+////////보드 확대/////////
 // 보드 핸들러
 function handle_biginput(){
   const event_id = event.currentTarget.id.split('__');
-  // console.log(event_id[1]);
   load_bigboard(event_id[1]);
 }
 
 async function load_bigboard(id){
     try{
-      console.log("눌럿음");
       const json = await fetch_tojson(board_url +'/'+id);
-      console.log(json);
       paint_bigboard(json);
   } catch(error){
       console.log(error);
@@ -139,10 +136,58 @@ async function load_bigboard(id){
 
 function paint_bigboard(json){
   const ele =  document.querySelector('.Board');
+  const html = '<div class="Board__title"><h1>모임이름 - 게시판</h1> </div>'+
+  '<div class="input__big"> <div class = "input__bigsubject">'+'<h2>'+json.subject+'</h2>'+'</div>'+
+  '<div class = "input__bigarticle">'+'<p>'+json.content+'</p>'+'</div>'+
+  '<div class = "input__bigothers">'+'<ol id = "bigboard__'+json.id+'>'+'<li>'+json.create_date+
+  '</li><li><input type="button" id = "bigboard__'+json.id+'" onclick="handle_delete();" value="삭제" /></li>'+
+  '<li><input type="button"  onclick="reload_board();" value="목록" /></li>'+
+  '<li><input type="button"  onclick="handle_modify();" value="수정" /></li></ol>'+'</div></div>';
+
   ele.innerHTML = ''; //초기화 다지우기 
-  ele.innerHTML = '<div class="Board__title"><h1>모임이름 - 게시판</h1> </div>'+
-  '<div class="input__big"> <div class = "input__bigsubject">'+json.subject+'</div>'+
-  '<div class = "input__bigarticle">'+json.content+'</div>'+
-  '<div class = "input__bigothers">'+json.create_date+'</div></div>'
+  ele.innerHTML = html;
+}
+
+////////보드 삭제//////
+function handle_delete(){
+   const confirmflag = confirm("삭제하시겠습니까?");
+           if(confirmflag){
+              const event_id = event.currentTarget.id.split('__');
+              delete_board(event_id[1]);
+           }
+}
+async function delete_board(id){
+  try{
+
+      const json = await fetch_delete(board_url +'/'+id);
+      reload_board();
+  } catch(error){
+      console.log(error);
+
+    }
+}
+
+function fetch_delete(url){
+  return fetch(url,{
+    method: 'DELETE',
+  }).then(function(response) {
+    if(response.ok){
+      return alert("삭제되었습니다!");
+    }
+    else{
+      alert("HTTP-ERROR: " + response.status);
+    }
+  });
 
 }
+
+function reload_board(){
+  document.querySelector('.Board').innerHTML = '<div class="Board__title"><h1>모임이름 - 게시판</h1> </div>'+'<div class="Board__input"></div>' +
+  '<div class="Board__lists"></div>';
+  init();
+  }
+
+////수정///
+  function handle_modify(){
+
+  }
