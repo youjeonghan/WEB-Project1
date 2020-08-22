@@ -1,4 +1,4 @@
-var json_url = 'http://127.0.0.1:5000/board';
+var json_url = 'http://127.0.0.1:5000/api/board';
 fetch(json_url)
   .then(function(response) {
     return response.json();
