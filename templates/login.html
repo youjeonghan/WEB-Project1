@@ -6,34 +6,35 @@
 </head>
 
 
+<script type="text/javascript" src="../static/js/login.js"></script>
+
 <body>
 
     <div>
         <section class="container">
             <a href="/" class="logo">ROOMS</a>
-            <form method="post" id="authForm" name="authForm" action="Put URL here">
-                <!-- method :전송방식->post , action : 로그인 -->
+            <div>
                 <div class="input-box">
                     <input type="text" id="loginId" name="loginId" placeholder="ID">
-                    <!-- type = text or email -->
                     <label for="loginId">ID</label>
                 </div>
                 <div class="input-box">
                     <input type="Password" id="loginPw" name="Password" placeholder="Password">
                     <label for="loginPw">Password</label>
                 </div>
-                <!-- <button type="submit" disabled >Login</button> -->
                 <div class="button-box">
-                    <button type="submit" href="/group">Login</button>
+                    <button id="login-btn" onclick="group()">Login</button>
                 </div>
-            </form>
+            </div>
             <div class="sub-container">
                 <a href="">Forgot Password?</a> |
                 <a href="">Sign up</a>
             </div>
+            
         </section>
     </div>
 
 </body>
+
 
 </html>
