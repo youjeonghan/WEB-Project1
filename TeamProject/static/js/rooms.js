@@ -193,9 +193,8 @@ function handle_modify(){
   const event_id = event.currentTarget.id.split('__');
   paint_modify(event_id[1]);
 }
-function fetch_modify(url , data){
-  console.log(url);
-  console.log(data);
+function fetch_modify(id , data){
+  const url = board_url + '/' + id;
   return fetch(url,{
     method: 'PUT',
     headers: {
@@ -229,7 +228,8 @@ async function modify_board(){
   const input__bigarticle = document.querySelector('.input__bigarticle');
   let data = {
     subject : input__bigsubject.value,
-    content : input__bigarticle.value
+    content : input__bigarticle.value,
+    id : event_id[1]
   };
-  await fetch_modify(board_url + '/' + event_id[1] , data);
+  await fetch_modify(event_id[1] , data);
 }
