@@ -29,8 +29,10 @@ body {
 
 .profile {
     position: relative;
-    font-size: 1.8em;
+    font-size: 1.6em;
     font-weight: 500;
+    margin-top: 15%;
+    line-height: 1.8;
 }
 
 .user-image{
@@ -39,6 +41,7 @@ body {
     max-width: 50px;
     max-height: 50px;
     float: left;
+    margin-right: 10px;
 }
 
 /* ------------------------ right top ----------------------------- */
@@ -76,7 +79,7 @@ body {
 }
 
 .group-margin{
-    margin: 25px;
+    margin: 15px 25px;
 }
 
 .line {
@@ -115,6 +118,18 @@ body {
     opacity: 0.6;
 }
 
+.edit-btn{
+    width: 40%;
+    height: 10%;
+    background: darkslateblue;
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .flex3 {
     flex: 3;
     height: 100%;
@@ -132,12 +147,13 @@ body {
 }
 
 .group-image {
-    width: 85%;
+    width: 80%;
     border-radius: 50%;
     background: darkslateblue;
-    max-height: 70%;
+    max-height: 60%;
 }
 
 .group-image:hover {
     opacity: 0.7;
 }
+
