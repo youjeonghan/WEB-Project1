@@ -105,21 +105,7 @@ function hide_input(){
 }
 
 
-//버튼 이벤트 헨들러
-async function handle_input(){
-  try{
-    const data = input_board();
-    await fetch_insert(data);
-    init();
-  } catch(error){
-    console.log(error);
-  }
-
-}
-
-////////보드 확대/////////
-// 보드 핸들러
-function handle_biginput(){
+//버튼 이벤트 헨들러Zxc v   
   const event_id = event.currentTarget.id.split('__');
   load_bigboard(event_id[1]);
 }
