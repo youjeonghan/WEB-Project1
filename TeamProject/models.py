@@ -27,10 +27,10 @@ class Board(db.Model):				# 게시글 모델 : id,제목,내용,생성시간
 # -------------------------------------------------------------------------------------------------------------
 class Comment(db.Model):            # 댓글 모델
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete='CASCADE'), nullable=False)       # ondelete=CASCADE 답변과 연결된 글이 삭제될 경우 댓글도 함께 삭제된다는 의미
     content = db.Column(db.Text(), nullable=False)
     create_date = db.Column(db.DateTime(), nullable=False)
-    board_id = db.Column(db.Integer, db.ForeignKey('question.id', ondelete='CASCADE'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete='CASCADE'), nullable=False)       # ondelete=CASCADE 댓글과 연결된 유저가 삭제될 경우 댓글도 함께 삭제된다는 의미
+    board_id = db.Column(db.Integer, db.ForeignKey('question.id', ondelete='CASCADE'), nullable=False)      # ondelete=CASCADE 댓글과 연결된 글이 삭제될 경우 댓글도 함께 삭제된다는 의미
     board = db.relationship('Board', backref=db.backref('comment_set'))
 
     @property
