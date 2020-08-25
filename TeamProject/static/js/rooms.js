@@ -143,7 +143,9 @@ function paint_bigboard(json){
   '<div class = "board__bigothers">'+ '<p>'+json.create_date+'</p>'+
   '<input type="button" id = "bigboard__'+json.id+'" onclick="handle_delete();" value="삭제" />'+
   '<input type="button"  onclick="reload_board();" value="목록" />'+
-  '<input type="button" id = "bigboard__'+json.id+'" onclick="handle_modify();" value="수정" /></div>';
+  '<input type="button" id = "bigboard__'+json.id+'" onclick="handle_modify();" value="수정" />'+
+  '<input type="file" id="upload_file" onclick="upload_file();" multiple />'+
+  '<div  onclick="handle_drag();" class = "test_drag" oncdarggable = "true">드래그하세요</div></div>';
 
   ele.innerHTML = ''; //초기화 다지우기 
   ele.innerHTML = html;
@@ -232,4 +234,21 @@ async function modify_board(){
     id : event_id[1]
   };
   await fetch_modify(event_id[1] , data);
+}
+
+function upload_file(){
+    
+    const files = event.target.files;
+    const fileReader = new FileReader();
+    // fileReader.readAsText(files[0]); //텍스트 파일 읽을때 사용
+    // fileReader.readAsDataURL(files[0]); //이미지를 URL로 읽음 , 미리보기로 사용하기좋다
+    // fileReader.readAsArrayBuffer(files[0]);//버퍼링 , 서버로 보낼때 사용함
+    // fileReader.readAsBinaryString(files[0]);//이진값으로 반환 서버에서 주로사용함 
+    fileReader.onload = function(event){
+      console.log(event.target.result);
+    }
+  
+}
+function handle_drag(){
+  event.
 }
