@@ -145,7 +145,7 @@ function paint_bigboard(json){
   '<input type="button"  onclick="reload_board();" value="목록" />'+
   '<input type="button" id = "bigboard__'+json.id+'" onclick="handle_modify();" value="수정" />'+
   '<input type="file" id="upload_file" onclick="upload_file();" multiple />'+
-  '<div  onclick="handle_drag();" class = "test_drag" oncdarggable = "true">드래그하세요</div></div>';
+  '</div><div id = "test_drag" draggable = "true">드래그하세요</div>';
 
   ele.innerHTML = ''; //초기화 다지우기 
   ele.innerHTML = html;
@@ -213,6 +213,7 @@ function fetch_modify(id , data){
   });
 
 }
+
 async function paint_modify(id){
   const tag = document.querySelector('.input__big');
   const json = await fetch_tojson(board_url + '/' + id);
@@ -224,6 +225,7 @@ async function paint_modify(id){
   '<input type="button"  onclick="reload_board();" value="목록" />'+
   '<input type="button" id = "bigboard__'+json.id+'" onclick="modify_board();" value="완료" /></div>';
 }
+
 async function modify_board(){
   const event_id = event.currentTarget.id.split('__');
   const input__bigsubject = document.querySelector('.input__bigsubject');
@@ -250,5 +252,8 @@ function upload_file(){
   
 }
 function handle_drag(){
-  event.
+  const ele = document.getElementById('test_drag');
+  ele.addEventListener('ondragstart' , function(){
+
+    })
 }
