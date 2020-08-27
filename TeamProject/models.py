@@ -9,6 +9,7 @@ class Board(db.Model):				# 게시글 모델 : id,제목,내용,생성시간
     content = db.Column(db.Text(), nullable=False)
     user_id = db.Column(db.Integer, nullable=False)
     create_date = db.Column(db.DateTime(), nullable=False)
+    content2 = db.Column(db.Text(), nullable=False)
 
     @property
     def serialize(self):
@@ -29,9 +30,10 @@ class Comment(db.Model):            # 댓글 모델
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.Text(), nullable=False)
     create_date = db.Column(db.DateTime(), nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete='CASCADE'), nullable=False)       # ondelete=CASCADE 댓글과 연결된 유저가 삭제될 경우 댓글도 함께 삭제된다는 의미
-    board_id = db.Column(db.Integer, db.ForeignKey('question.id', ondelete='CASCADE'), nullable=False)      # ondelete=CASCADE 댓글과 연결된 글이 삭제될 경우 댓글도 함께 삭제된다는 의미
-    board = db.relationship('Board', backref=db.backref('comment_set'))
+    # user_id = db.Column(db.Integer, db.ForeignKey('user.id', ondelete='CASCADE'), nullable=False)       # ondelete=CASCADE 댓글과 연결된 유저가 삭제될 경우 댓글도 함께 삭제된다는 의미
+    # board = db.relationship('Board', backref=db.backref('comment_set'))
+    # board_id = db.Column(db.Integer, db.ForeignKey('board.id', ondelete='CASCADE'), nullable=False)      # ondelete=CASCADE 댓글과 연결된 글이 삭제될 경우 댓글도 함께 삭제된다는 의미
+    
 
     @property
     def serialize(self):
