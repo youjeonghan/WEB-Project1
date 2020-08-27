@@ -21,7 +21,7 @@ def test():
 
 @app.route('/')
 def main():
-	return render_template('index.html')
+	return render_template('main.html')
 
 @app.route('/rooms')
 def room():
@@ -88,5 +88,9 @@ db.init_app(app)
 db.app = app
 db.create_all()
 
-if __name__ == "__main__":
-	app.run(host='127.0.0.1',port=5000,debug=True)
+# if __name__ == "__main__":
+# 	app.run(host='127.0.0.1',port=5000,debug=True)
+
+### 실행
+if __name__ == '__main__':
+	app.run(host='0.0.0.0', debug=True, port='5000')
